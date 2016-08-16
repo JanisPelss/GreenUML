@@ -20,6 +20,7 @@ Require-Bundle: org.eclipse.gmf.bridge;bundle-version="1.3.1",
  org.eclipse.gmf.xpand.editor;bundle-version="2.2.0",
  org.apache.batik.svggen;bundle-version="1.6.0",
  org.apache.batik.ext.awt;bundle-version="1.6.0",
- edu.buffalo.cse.green;bundle-version="3.5.0"
+ edu.buffalo.cse.green;bundle-version="3.5.0",
+ org.apache.batik.util;bundle-version="1.7.0"
 Export-Package: edu.buffalo.cse.green.editor.save
 Bundle-ClassPath: GreenSVG.jar
