@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="edu.buffalo.cse.green.relationships" id="edu.buffalo.cse.green.relationship.realization" name="Realization">
+      <controller class="edu.buffalo.cse.green.relationship.realization.RealizationPart"/>
+      <generator class="edu.buffalo.cse.green.relationship.realization.RealizationGenerator"/>
+      <recognizer class="edu.buffalo.cse.green.relationship.realization.RealizationRecognizer"/>
+      <remover class="edu.buffalo.cse.green.relationship.realization.RealizationRemover"/>
+      <validity
+            classToClass=""
+            classToEnum=""
+            classToInterface="1"
+			enumToClass=""
+			enumToEnum=""
+			enumToInterface="1"
+            interfaceToClass=""
+            interfaceToEnum=""
+            interfaceToInterface=""/>
+   </extension>
+
+</plugin>

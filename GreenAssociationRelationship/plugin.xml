@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="edu.buffalo.cse.green.relationships">
+      <controller
+            class="edu.buffalo.cse.green.relationship.association.AssociationPart">
+      </controller>
+      <generator
+            class="edu.buffalo.cse.green.relationship.association.AssociationGenerator">
+      </generator>
+      <recognizer
+            class="edu.buffalo.cse.green.relationship.association.AssociationRecognizer">
+      </recognizer>
+      <remover
+            class="edu.buffalo.cse.green.relationship.association.AssociationRemover">
+      </remover>
+      <validity
+            classToClass="1"
+            classToEnum="1"
+            classToInterface="1"
+            enumToClass="1"
+            enumToEnum="1"
+            enumToInterface="1"
+            interfaceToClass=""
+            interfaceToEnum=""
+            interfaceToInterface="">
+      </validity>
+   </extension>
+
+</plugin>

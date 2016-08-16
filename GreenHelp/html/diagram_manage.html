@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Diagram Management</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<h3><font face="Arial, Helvetica, sans-serif">Diagram Management</font></h3>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Creating a New Diagram</strong><br>
+  New diagrams can be created in primarily two ways. The first is through Eclipse's 
+  File-&gt;New... menu. This option will create an empty diagram in the directory 
+  with a name specified. The second is through an element's context menu in the 
+  Package Explorer View. This option will create a diagram, and also add the selected 
+  element(s) to the new diagram.</font></p>
+
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Adding Contents to Diagrams</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif"><strong>New Types</strong><br>
+  New Java types can be created in a diagram using the <a href="overview.html#ModelGeneration">palette 
+  tools</a>, Green will generate corresponding Java code in the project.</font></p>
+<p><font face="Arial, Helvetica, sans-serif"><strong>New Relationships</strong><br>
+  To add relationships to types in the diagram, select one of the <a href="overview.html#RelationGeneration">relationship 
+  tools</a>. Then, select the source and target types to create a relationship 
+  between them. Green will automatically generate the necessary code to create 
+  the selected relationship. </font></p>
+
+<p><font face="Arial, Helvetica, sans-serif"><strong>New Elements</strong><br>
+  New elements of types (field or method) can be added through the 'Add Field' / 
+  'Add Method' <a href="context_menus.html">context menus</a>.</font></p>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Notes</strong><br>
+  A note can be drawn directly in the editor, and its contents can be changed 
+  by double-clicking on it. Notes are saved along with the rest of the contents 
+  of the editor. They are selectable and resizable. Their contents are stored 
+  only in the diagram file and are not referenced anywhere in the Java code.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Adding Existing Elements</strong><br>
+  Exsiting elements can be added to diagrams through the context menus of the 
+  specific element in Package Explorer.</font></p>
+
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Refactor</strong><br>
+  Elements in the diagram can invoke JDT's refactoring commands 'Move,' 'Rename,' 
+  and 'Change Method Signature.' These commands are found in the <a href="context_menus.html">'Refactor'</a> 
+  submenu of the context menus.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Removing Types</strong><br>
+  Types can be removed from a diagram using the 'Backspace' key or the appropriate 
+  <a href="context_menus.html">context menu</a> command. This does not change 
+  anything in the file system.</font></p>
+
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Deleting Elements</strong><br>
+  Selectable element (types, methods, fields, relationships, etc.) in a Green 
+  diagram can be deleted permanently by using the 'Delete' key. Non-editable Java 
+  elements, however, cannot be deleted (e.g. if java.lang.String is in a diagram, 
+  it cannot be deleted). <br>
+  Warning: Deleted elements CANNOT be restored through 'Undo' (with the exception 
+  of Notes, which can be restored).</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Refresh</strong><br>
+  To manually refresh the contents of the editor, press the &quot;f&quot; key, 
+  or use <a href="context_menus.html">'Refresh Editor'</a> in the context menu.</font></p>
+
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Saving Diagrams</strong><br>
+  Green diagrams are saved to the directory within the project specified when 
+  they are created. However, a 'Save As...' dialog can be brought up to save a diagram 
+  elsewhere or as a different format. Green supports several formats for saving 
+  its diagrams. The default format is a Green File (extension .grn). Diagrams 
+  can also be saved as images using either JPEG (.jpg) or GIF (.gif) formats. 
+  To access these formats, change the file type specified in the Save As dialog 
+  (how this is done varies across operating systems). 'Save As...' can 
+  be accessed through Eclipse's 'File' menu or the diagram's context menu.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Printing Diagrams</strong><br>
+  Green supports printing of its diagram. Print can be accessed through Eclipse's 
+  File menu or the diagram's context menu.<br>
+  Note: Eclipse 3.4, and therefore Green, does not fully support printing in Linux.</font></p>
+
+</body>
+</html>
