@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/CCVisu-3.0.jar"/>
+	<classpathentry kind="lib" path="/home/student/eclipse/plugins/org.eclipse.gmf.bridge_1.3.1.201409171321.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

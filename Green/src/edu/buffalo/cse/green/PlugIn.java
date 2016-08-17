@@ -76,7 +76,7 @@ import edu.buffalo.cse.green.types.ITypeProperties;
  */
 
 public final class PlugIn extends AbstractUIPlugin {
-	private static PlugIn PLUGIN;
+	private static PlugIn PLUGIN = new PlugIn();
 	private static ResourceBundle BUNDLE;
 
 	/**

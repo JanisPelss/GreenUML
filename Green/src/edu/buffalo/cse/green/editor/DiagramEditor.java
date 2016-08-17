@@ -92,7 +92,7 @@ import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.ManhattanConnectionRouter;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
-import org.apache.log4j.Logger;
+
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
@@ -102,7 +102,7 @@ import org.eclipse.gef.MouseWheelHandler;
 import org.eclipse.gef.MouseWheelZoomHandler;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CommandStackEvent;
-import org.eclipse.gef.commands.CommandStackEventListener;
+import org.eclipse.gef.commands.CommandStackListener;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
@@ -219,13 +219,13 @@ import edu.buffalo.cse.green.xml.XMLNode;
 
 
 public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
-		CommandStackEventListener, ISelectionProvider {
+		CommandStackListener, ISelectionProvider {
 	static {
 		_editors = new ArrayList<DiagramEditor>();
 	}
 
 //	private boolean _ignoreMenuSelection = false;
-	static Logger log = Logger.getLogger(log4jExample.class.getName());
+
 	/**
 	 * Reference string for the context menu in our editor.
 	 */
@@ -254,7 +254,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	/**
 	 * Stores a reference to the active editor.
 	 */
-	private static DiagramEditor ACTIVE_EDITOR;
+	private static DiagramEditor ACTIVE_EDITOR= new DiagramEditor();
 
 	/**
 	 * The top-level model displayed in the diagram.
@@ -303,7 +303,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		_bendpoints = new ArrayList<BendpointInformation>();
 		setEditDomain(new DefaultEditDomain(this));
 		System.out.println("Adding command listenre");
-		getCommandStack().addCommandStackEventListener(this);
+		getCommandStack().addCommandStackListener(this);
 		System.out.println("command listener added");
 		getCommandStack().setUndoLimit(100);
 		_root = new RootModel();
@@ -1020,6 +1020,8 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 */
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 		if (selection.isEmpty()) { return; }
+		System.out.println(part);
+		System.out.println(selection);
 		super.selectionChanged(part, selection);
 		
 		if (part instanceof DiagramEditor) {
@@ -1551,11 +1553,6 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		return getGraphicalControl().getBounds();
 	}
 
-	@Override
-	public void stackChanged(CommandStackEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
 }
 
 /**
