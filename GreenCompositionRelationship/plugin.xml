@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="edu.buffalo.cse.green.relationships" id="edu.buffalo.cse.green.relationship.composition" name="Composition">
+      <controller class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <generator class="edu.buffalo.cse.green.relationship.composition.CompositionGenerator"/>
+      <recognizer class="edu.buffalo.cse.green.relationship.composition.CompositionRecognizer"/>
+      <remover class="edu.buffalo.cse.green.relationship.composition.CompositionRemover"/>
+      <validity
+            classToClass="1"
+            classToEnum=""
+            classToInterface="1"
+			enumToClass="1"
+			enumToEnum=""
+			enumToInterface="1"
+            interfaceToClass=""
+			interfaceToEnum=""
+            interfaceToInterface=""/>
+   </extension>
+
+</plugin>

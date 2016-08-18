@@ -1,0 +1,6 @@
+
+green
+
+Font  - Courier New (regular)
+Color - RGB: 0,128,0 (#008000)
+        HSL: 80,240,60

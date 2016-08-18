@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="edu.buffalo.cse.green.relationships" id="edu.buffalo.cse.green.relationship.generalization" name="Generalization">
+      <controller class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <generator class="edu.buffalo.cse.green.relationship.generalization.GeneralizationGenerator"/>
+      <recognizer class="edu.buffalo.cse.green.relationship.generalization.GeneralizationRecognizer"/>
+      <remover class="edu.buffalo.cse.green.relationship.generalization.GeneralizationRemover"/>
+      <validity
+            classToClass="1"
+            classToEnum=""
+            classToInterface=""
+			enumToClass=""
+			enumToEnum=""
+			enumToInterface=""
+            interfaceToClass=""
+            interfaceToEnum=""
+            interfaceToInterface="1"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin
+   id="edu.buffalo.cse.green"
+   name="Green Plug-in"
+   version="3.5.0.qualifier"
+   provider-name="University at Buffalo, State University of New York"
+   class="edu.buffalo.cse.green.PlugIn">
+
+   <runtime>
+      <library name="Green.jar">
+         <export
+               name="*">
+         </export>
+      </library>
+      <library name="lib/CCVisu-3.0.jar">
+         <export
+               name="*">
+         </export>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ltk.core.refactoring"/>
+      <import plugin="org.eclipse.ltk.ui.refactoring"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.views"/>
+   </requires>
+
+
+   <extension-point id="relationships"
+		 name="Green Relationships"
+		 schema="schema/relationships.exsd"/>
+		 
+   <extension-point id="contextAction"
+		 name="Green Actions"
+		 schema="schema/contextAction.exsd"/>
+
+   <extension-point id="designPattern"
+   		 name="Design Pattern"
+   		 schema="schema/designPattern.exsd"/>
+   
+   <extension-point id="editorViews"
+         name="Green Editor View"
+         schema="schema/editorViews.exsd"/>
+   
+   <extension-point id="saveFormat"
+         name="Save Format"
+         schema="schema/saveFormat.exsd"/>
+
+   <extension-point id="javaType"
+         name="Java Type"
+         schema="schema/javaType.exsd"/>
+	
+   <extension
+         point="org.eclipse.ui.newWizards">
+		<primaryWizard id="edu.buffalo.cse.green.dialogs.NewDiagramWizard"/>
+    	 <category
+            id="Green.category1"
+            name="Green UML"
+            >
+	     </category>
+      	 <wizard
+              category="Green.category1"
+              class="edu.buffalo.cse.green.dialogs.wizards.NewDiagramWizard"
+              icon="icons/green.jpg"
+              id="edu.buffalo.cse.green.dialogs.NewDiagramWizard"
+              name="Green UML Class Diagram">
+         	<class
+               class="edu.buffalo.cse.green.dialogs.wizards.NewDiagramWizard">
+         	</class>
+         	<description>
+           		Create new Green diagram.
+ 	        </description>
+    	 </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            class="edu.buffalo.cse.green.editor.DiagramEditor"
+            icon="icons/green.jpg"
+            name="Green (UML Class Diagram Editor)"
+            contributorClass="edu.buffalo.cse.green.editor.DiagramActionBarContributor"
+            id="edu.buffalo.cse.green.editor.diagrameditor"
+            extensions="dia">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            class="edu.buffalo.cse.green.editor.DiagramEditor"
+            icon="icons/green.jpg"
+            name="Green (UML Class Diagram Editor)"
+            contributorClass="edu.buffalo.cse.green.editor.DiagramActionBarContributor"
+            id="edu.buffalo.cse.green.editor.diagrameditor"
+            extensions="grn">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.jdt.core.IJavaElement"
+            id="edu.buffalo.cse.green.addjavafile">
+       <menu
+             id="greenMenu"
+             label="Green UML"
+             path="group.open">
+    	</menu>
+    	
+         <action
+               class="edu.buffalo.cse.green.action.AddJavaFileAction"
+               enablesFor="*"
+               icon="icons/green.jpg"
+               id="edu.buffalo.cse.green.editor.diagrameditor.action"
+               label="Add to Last Viewed Class Diagram"
+               menubarPath="greenMenu/Green"
+               tooltip="Open this file in UML editor">
+         </action>
+         
+      </objectContribution>
+      
+      <objectContribution
+            objectClass="org.eclipse.jdt.core.IJavaElement"
+            id="edu.buffalo.cse.green.increjavafile">
+       <menu
+             id="greenMenu"
+             label="Green UML"
+             path="group.open">
+    	</menu>
+    	
+         <action
+               class="edu.buffalo.cse.green.action.IncrementalInNewEditorAction"
+               enablesFor="*"
+               icon="icons/green.jpg"
+               id="edu.buffalo.cse.green.editor.diagrameditor.action"
+               label="Incremetally Explore in New Class Diagram"
+               menubarPath="greenMenu/Green"
+               tooltip="Incrementally explore type in UML editor">
+         </action>
+         
+      </objectContribution>
+
+            <objectContribution
+                  objectClass="org.eclipse.jdt.core.IJavaElement"
+                  id="edu.buffalo.cse.green.openneweditor">
+               <menu
+                     id="greenMenu"
+                     label="Green UML"
+                     path="group.open">
+               </menu>
+               <action
+                     class="edu.buffalo.cse.green.action.OpenNewEditorAction"
+                     enablesFor="*"
+                     icon="icons/green.jpg"
+                     id="edu.buffalo.cse.green.editor.diagrameditor.action"
+                     label="Add to New Class Diagram"
+                     menubarPath="greenMenu/Green"
+                     tooltip="Opens a new UML editor containing the selected file">
+               </action>      
+            </objectContribution>
+      
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.AddFieldAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.AddMethodAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.AutoArrangeAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.EditNoteAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.FilterAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.IncrementalExploreAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.OpenElementAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.OpenTypeAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.OpenCallHierarchyAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.OpenMethodSuperImplementationAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.OpenHierarchyAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.RefactorMethodSignatureAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.RefactorMoveAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.RefactorRenameAction"/>
+   </extension>
+   
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.RefreshAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.RemoveTypeAction"/>
+   </extension>
+   
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.PrintDIAAction"/>
+   </extension>
+   
+      <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.SaveDIAAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.UseSizeAction"/>
+   </extension>
+   
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.ZoomFitAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.ZoomFullAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.ZoomInAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.contextAction">
+      <action class="edu.buffalo.cse.green.editor.action.ZoomOutAction"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.editorViews"
+         name="Green UML View"
+         id="edu.buffalo.cse.green.editorViews.default">
+      <view
+            memberClass="edu.buffalo.cse.green.editor.view.MemberFigure"
+            noteClass="edu.buffalo.cse.green.editor.view.NoteFigure"
+            typeClass="edu.buffalo.cse.green.editor.view.TypeFigure"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            class="edu.buffalo.cse.green.preferences.GreenPreferencePage"
+            id="edu.buffalo.cse.green.preferences.GreenPreferencePage"
+            name="Green"/>
+      <page
+            category="edu.buffalo.cse.green.preferences.GreenPreferencePage"
+            class="edu.buffalo.cse.green.preferences.GreenPreferencePageClassBox"
+            id="edu.buffalo.cse.green.preferences.GreenPreferencePage.classboxes"
+            name="Class Boxes"/>
+      <page
+            category="edu.buffalo.cse.green.preferences.GreenPreferencePage"
+            class="edu.buffalo.cse.green.preferences.GreenPreferencePageColors"
+            id="edu.buffalo.cse.green.preferences.GreenPreferencePage.colors"
+            name="Colors and Fonts"/>
+   </extension>
+   
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="edu.buffalo.cse.green.preferences.PreferenceInitializer"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.saveFormat">
+      <format class="edu.buffalo.cse.green.editor.save.GreenFormat"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.saveFormat">
+      <format class="edu.buffalo.cse.green.editor.save.GIFFormat"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.saveFormat">
+      <format class="edu.buffalo.cse.green.editor.save.JPEGFormat"/>
+   </extension>
+   
+   <extension point="edu.buffalo.cse.green.saveFormat">
+      <format class="edu.buffalo.cse.green.editor.save.PNGFormat"/>
+   </extension>
+   
+   <extension point="edu.buffalo.cse.green.javaType">
+      <properties
+            class="edu.buffalo.cse.green.types.ClassTypeProperties"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.javaType">
+      <properties
+            class="edu.buffalo.cse.green.types.EnumTypeProperties"/>
+   </extension>
+
+   <extension point="edu.buffalo.cse.green.javaType">
+      <properties
+            class="edu.buffalo.cse.green.types.InterfaceTypeProperties"/>
+   </extension>
+   
+   
+   <extension point="org.eclipse.ltk.core.refactoring.renameParticipants">
+   	  <renameParticipant
+            id="edu.buffalo.cse.green.renameJavaElementParticipant"
+            name="RenameTypeParticipant" 
+            class="edu.buffalo.cse.green.editor.action.refactor.RefactorRenameParticipant">
+         <enablement>
+            <with variable="element">
+               <instanceof value="org.eclipse.jdt.core.IJavaElement"/>
+            </with>
+         </enablement>
+      </renameParticipant>
+   </extension>
+   
+</plugin>
