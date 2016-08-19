@@ -10,6 +10,7 @@
 
 package edu.buffalo.cse.green.editor;
 
+import static edu.buffalo.cse.green.GreenException.GRERR_FILE_FORMAT;
 import static edu.buffalo.cse.green.constants.PaletteStrings.CREATE_RELATIONSHIP_PREFIX_DESCRIPTION;
 import static edu.buffalo.cse.green.constants.PaletteStrings.CREATE_RELATIONSHIP_SUFFIX_DESCRIPTION;
 import static edu.buffalo.cse.green.constants.PaletteStrings.GROUP_CREATE_RELATIONSHIPS_LABEL;
