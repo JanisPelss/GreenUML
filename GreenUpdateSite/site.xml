@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/Green_3.5.0.201608191424.jar" id="Green" version="3.5.0.201608191424" os="linux,macosx,win32" ws="gtk,win32" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"/>
-   <feature url="features/GreenRelationships_3.5.0.201608191424.jar" id="GreenRelationships" version="3.5.0.201608191424" os="linux,macosx,win32" ws="gtk,win32" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"/>
-   <feature url="features/GreenSVGSave_3.5.0.201608191424.jar" id="GreenSVGSave" version="3.5.0.201608191424" os="linux,macosx,win32" ws="gtk,win32" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"/>
+   <feature url="features/Green_3.5.0.201608192041.jar" id="Green" version="3.5.0.201608192041" os="linux,macosx,win32" ws="gtk,win32" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64">
+      <category name="GreenUML"/>
+   </feature>
+   <feature url="features/GreenRelationships_3.5.0.201608192041.jar" id="GreenRelationships" version="3.5.0.201608192041" os="linux,macosx,win32" ws="gtk,win32" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64">
+      <category name="GreenUML"/>
+   </feature>
+   <feature url="features/GreenSVGSave_3.5.0.201608192041.jar" id="GreenSVGSave" version="3.5.0.201608192041" os="linux,macosx,win32" ws="gtk,win32" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64">
+      <category name="GreenUMLAddOns"/>
+   </feature>
+   <category-def name="GreenUML" label="Green UML">
+      <description>
+         Green UML Components
+      </description>
+   </category-def>
+   <category-def name="GreenUMLAddOns" label="Green UML Add-Ons"/>
 </site>
