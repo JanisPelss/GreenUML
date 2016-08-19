@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0",
 Export-Package: edu.buffalo.cse.green.relationship.association
 Bundle-ClassPath: GreenAssociationRelationship.jar
 Bundle-Vendor: University at Buffalo, State University of New York
+Bundle-ActivationPolicy: lazy

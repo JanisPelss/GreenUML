@@ -254,7 +254,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	/**
 	 * Stores a reference to the active editor.
 	 */
-	private static DiagramEditor ACTIVE_EDITOR= new DiagramEditor();
+	private static DiagramEditor ACTIVE_EDITOR;
 
 	/**
 	 * The top-level model displayed in the diagram.
@@ -298,19 +298,33 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * Constructs an instance of the editor.
 	 */
 	public DiagramEditor() {
+		System.out.println("1");
 		updateConnectionRouter();
+		System.out.println("2");
 		_editors.add(this);
+		System.out.println("3");
 		_bendpoints = new ArrayList<BendpointInformation>();
+		System.out.println("4");
 		setEditDomain(new DefaultEditDomain(this));
-		System.out.println("Adding command listenre");
+		System.out.println("5");
+		System.out.println("6");
 		getCommandStack().addCommandStackListener(this);
-		System.out.println("command listener added");
+		System.out.println("7");
+	
+		System.out.println("8");
 		getCommandStack().setUndoLimit(100);
+		System.out.println("9");
 		_root = new RootModel();
+		System.out.println("10");
 		_cuMap = new CompilationUnitMap();
+		System.out.println("11");
 		_filters = new ArrayList<Filter>();
-
-		getPalettePreferences().setPaletteState(FlyoutPaletteComposite.STATE_PINNED_OPEN);	
+		System.out.println("12");
+		
+		ACTIVE_EDITOR=this;
+		System.out.println("13");
+		getPalettePreferences().setPaletteState(FlyoutPaletteComposite.STATE_PINNED_OPEN);
+		System.out.println("DiagramEditor instance created.");
 	}
 
 	public Object getAdapter(Class adapter) {
@@ -325,10 +339,15 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * Updates the connection router based on the user's preference.
 	 */
 	private void updateConnectionRouter() {
+		System.out.println("trying to update connection router");
 		if (PlugIn.getBooleanPreference(P_MANHATTAN_ROUTING)) {
+			System.out.println("trying to update connection router(manhattan");
 			CONNECTION_ROUTER = new ManhattanConnectionRouter();
+			System.out.println("connection router updated");
 		} else {
+			System.out.println("trying to update connection router(bendpoint)");
 			CONNECTION_ROUTER = new BendpointConnectionRouter();
+			System.out.println("connection router updated");
 		}
 	}
 
@@ -564,6 +583,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		
 		_editors.remove(this);
 		getRootModel().dispose();
+		System.out.println("Disposing of active editor");
 		if (ACTIVE_EDITOR == this) ACTIVE_EDITOR = null;
 		
 		super.dispose();
@@ -868,6 +888,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * @see org.eclipse.ui.IWorkbenchPart#setFocus()
 	 */
 	public void setFocus() {
+		System.out.println("setting active editor");
 		ACTIVE_EDITOR = this;
 
 		for (ContextAction action : PlugIn.getActions()) {
@@ -943,6 +964,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 					element.getJavaProject().getProject(), elementPath);
 			DiagramEditor editor = (DiagramEditor) IDE.openEditor(
 					workbenchPage, diaFile, true);
+			System.out.println("active editor=editor");
 			ACTIVE_EDITOR = editor;
 			return editor;
 		} catch (CoreException e) {
@@ -1019,13 +1041,16 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+		if(part ==null || selection == null){
+			System.out.println("part or selection is null");
+		}
 		if (selection.isEmpty()) { return; }
-		System.out.println(part);
-		System.out.println(selection);
+
 		super.selectionChanged(part, selection);
 		
 		if (part instanceof DiagramEditor) {
 			if (_outlinePage != null) {
+				System.out.println("invoking setSelection()");
 				_outlinePage.setSelection(selection);
 			}
 		}

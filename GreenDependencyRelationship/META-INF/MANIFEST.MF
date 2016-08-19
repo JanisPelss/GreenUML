@@ -13,3 +13,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0",
  org.eclipse.jface;bundle-version="3.12.0"
 Export-Package: edu.buffalo.cse.green.relationship.dependency
 Bundle-ClassPath: GreenDependencyRelationship.jar
+Bundle-ActivationPolicy: lazy

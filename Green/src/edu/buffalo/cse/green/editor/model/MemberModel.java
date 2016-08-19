@@ -22,7 +22,7 @@ import static org.eclipse.jdt.core.IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER;
 import static org.eclipse.jdt.ui.JavaElementImageDescriptor.ERROR;
 import static org.eclipse.jdt.ui.JavaElementImageDescriptor.WARNING;
 //TODO Call to element marked internal by JDT
-import static org.eclipse.jdt.internal.ui.JavaPluginImages.DESC_OBJS_QUICK_FIX;
+import static edu.buffalo.cse.green.editor.model.JavaPluginImages.DESC_OBJS_QUICK_FIX;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +37,8 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.ui.JavaElementImageDescriptor;
 import org.eclipse.jdt.ui.JavaElementLabelProvider;
+import org.eclipse.jdt.ui.JavaPluginImages;
+
 import org.eclipse.jdt.ui.refactoring.RenameSupport;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
