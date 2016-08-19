@@ -90,10 +90,11 @@ public class IncrementalExploreCommand extends Command {
 			_editor.refresh();
 		}
 		else if(!_suppressWarning){
-			MessageDialog.openInformation(_editor.getSite().getShell(),
+			//Comment to prevent distraction.
+			/*MessageDialog.openInformation(_editor.getSite().getShell(),
 					DIALOG_INCREMENTAL_EXPLORATION_NO_RELATIONSHIPS_TITLE,
 					DIALOG_INCREMENTAL_EXPLORATION_NO_MORE_RELATIONSHIPS +
-					": " + _model.getDisplayName());
+					": " + _model.getDisplayName());*/
 		}
 	}
 	
