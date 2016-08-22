@@ -34,8 +34,7 @@
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui.views"/>
    </requires>
-
-
+ 
    <extension-point id="relationships"
 		 name="Green Relationships"
 		 schema="schema/relationships.exsd"/>

@@ -4,7 +4,5 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/CCVisu-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/student/eclipse/plugins/org.eclipse.gmf_1.10.0.201606071959.jar"/>
-	<classpathentry kind="lib" path="/home/student/eclipse/plugins/org.eclipse.gmf.xpand_2.2.0.201509291144.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

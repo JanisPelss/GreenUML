@@ -102,7 +102,7 @@ import org.eclipse.gef.MouseWheelHandler;
 import org.eclipse.gef.MouseWheelZoomHandler;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CommandStackEvent;
-import org.eclipse.gef.commands.CommandStackListener;
+import org.eclipse.gef.commands.CommandStackEventListener;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
@@ -206,6 +206,8 @@ import edu.buffalo.cse.green.util.JavaProjectUtil;
 import edu.buffalo.cse.green.xml.XMLConverter;
 import edu.buffalo.cse.green.xml.XMLNode;
 
+//import org.apache.log4j.Logger;
+
 /**
  * The editor. Displays a UML diagram that represents all the parts of the
  * <code>JavaModel</code> that have been loaded into it. New projects,
@@ -219,13 +221,13 @@ import edu.buffalo.cse.green.xml.XMLNode;
 
 
 public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
-		CommandStackListener, ISelectionProvider {
+		CommandStackEventListener, ISelectionProvider {
 	static {
 		_editors = new ArrayList<DiagramEditor>();
 	}
 
 //	private boolean _ignoreMenuSelection = false;
-
+	//static Logger log = Logger.getLogger(log4jExample.class.getName());
 	/**
 	 * Reference string for the context menu in our editor.
 	 */
@@ -298,33 +300,20 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * Constructs an instance of the editor.
 	 */
 	public DiagramEditor() {
-		System.out.println("1");
 		updateConnectionRouter();
-		System.out.println("2");
 		_editors.add(this);
-		System.out.println("3");
 		_bendpoints = new ArrayList<BendpointInformation>();
-		System.out.println("4");
 		setEditDomain(new DefaultEditDomain(this));
-		System.out.println("5");
-		System.out.println("6");
-		getCommandStack().addCommandStackListener(this);
-		System.out.println("7");
-	
-		System.out.println("8");
+		System.out.println("Adding command listener");
+		getCommandStack().addCommandStackEventListener(this);
+		System.out.println("Command listener added");
 		getCommandStack().setUndoLimit(100);
-		System.out.println("9");
 		_root = new RootModel();
-		System.out.println("10");
 		_cuMap = new CompilationUnitMap();
-		System.out.println("11");
 		_filters = new ArrayList<Filter>();
-		System.out.println("12");
-		
-		ACTIVE_EDITOR=this;
-		System.out.println("13");
-		getPalettePreferences().setPaletteState(FlyoutPaletteComposite.STATE_PINNED_OPEN);
-		System.out.println("DiagramEditor instance created.");
+		ACTIVE_EDITOR = this; //Fixes null pointers
+
+		getPalettePreferences().setPaletteState(FlyoutPaletteComposite.STATE_PINNED_OPEN);	
 	}
 
 	public Object getAdapter(Class adapter) {
@@ -339,15 +328,10 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * Updates the connection router based on the user's preference.
 	 */
 	private void updateConnectionRouter() {
-		System.out.println("trying to update connection router");
 		if (PlugIn.getBooleanPreference(P_MANHATTAN_ROUTING)) {
-			System.out.println("trying to update connection router(manhattan");
 			CONNECTION_ROUTER = new ManhattanConnectionRouter();
-			System.out.println("connection router updated");
 		} else {
-			System.out.println("trying to update connection router(bendpoint)");
 			CONNECTION_ROUTER = new BendpointConnectionRouter();
-			System.out.println("connection router updated");
 		}
 	}
 
@@ -583,7 +567,6 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		
 		_editors.remove(this);
 		getRootModel().dispose();
-		System.out.println("Disposing of active editor");
 		if (ACTIVE_EDITOR == this) ACTIVE_EDITOR = null;
 		
 		super.dispose();
@@ -888,7 +871,6 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * @see org.eclipse.ui.IWorkbenchPart#setFocus()
 	 */
 	public void setFocus() {
-		System.out.println("setting active editor");
 		ACTIVE_EDITOR = this;
 
 		for (ContextAction action : PlugIn.getActions()) {
@@ -964,7 +946,6 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 					element.getJavaProject().getProject(), elementPath);
 			DiagramEditor editor = (DiagramEditor) IDE.openEditor(
 					workbenchPage, diaFile, true);
-			System.out.println("active editor=editor");
 			ACTIVE_EDITOR = editor;
 			return editor;
 		} catch (CoreException e) {
@@ -1041,16 +1022,11 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if(part ==null || selection == null){
-			System.out.println("part or selection is null");
-		}
 		if (selection.isEmpty()) { return; }
-
 		super.selectionChanged(part, selection);
 		
 		if (part instanceof DiagramEditor) {
 			if (_outlinePage != null) {
-				System.out.println("invoking setSelection()");
 				_outlinePage.setSelection(selection);
 			}
 		}
@@ -1578,6 +1554,12 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		return getGraphicalControl().getBounds();
 	}
 
+	@Override
+	public void stackChanged(CommandStackEvent event) {
+		// TODO Auto-generated method stub
+		//super.stackChanged(event);
+		checkDirty();
+	}
 }
 
 /**
