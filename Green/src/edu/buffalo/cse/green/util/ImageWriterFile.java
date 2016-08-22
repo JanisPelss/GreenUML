@@ -10,6 +10,8 @@
 
 package edu.buffalo.cse.green.util;
 
+
+
 /**
  * Creates graphics files containing <code>IFigure</code>s.
  * 
@@ -38,4 +40,6 @@ public class ImageWriterFile extends ImageWriter {
 	protected void saveImageToStream() {
 		_imageIO.save(_filename, _format);
 	}
+
+
 }

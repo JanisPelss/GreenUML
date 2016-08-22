@@ -12,14 +12,20 @@ package edu.buffalo.cse.green.editor.save;
 
 import static edu.buffalo.cse.green.GreenException.GRERR_FILE_NOT_FOUND;
 
+import java.awt.Graphics2D;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.awt.image.IndexColorModel;
 import java.io.File;
 import java.io.IOException;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.swt.graphics.Image;
 
 import edu.buffalo.cse.green.GreenException;
 import edu.buffalo.cse.green.editor.DiagramEditor;
 import edu.buffalo.cse.green.util.ImageWriterFile;
+
 
 /**
  * A saver for the GIF format.
@@ -35,7 +41,10 @@ public class GIFFormat implements ISaveFormat {
 		try {
 			ImageWriterFile writer = new ImageWriterFile(
 					new File(fileName).getCanonicalPath(), 2);
+			System.out.println("saving image to stream");
+			
 			writer.saveFigure(figure);
+			System.out.println("image saved to stream");
 		} catch (IOException iOE) {
 			GreenException.fileException(
 					GRERR_FILE_NOT_FOUND);
@@ -48,7 +57,9 @@ public class GIFFormat implements ISaveFormat {
 	public String getExtension() {
 		return "gif";
 	}
-
+	public java.awt.Image bufferedImagetoImage(BufferedImage bi) {
+	    return Toolkit.getDefaultToolkit().createImage(bi.getSource());
+	}
 	/**
 	 * @see edu.buffalo.cse.green.editor.save.ISaveFormat#getDescription()
 	 */

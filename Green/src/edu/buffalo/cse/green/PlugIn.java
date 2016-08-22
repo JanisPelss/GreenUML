@@ -66,6 +66,7 @@ import edu.buffalo.cse.green.relationships.RelationshipRecognizer;
 import edu.buffalo.cse.green.relationships.RelationshipRemover;
 import edu.buffalo.cse.green.relationships.RelationshipSubtype;
 import edu.buffalo.cse.green.types.ITypeProperties;
+import edu.buffalo.cse.green.UmlLog;
 
 /**
  * The main plugin class to be used in the desktop. This class loads in all
@@ -78,7 +79,8 @@ import edu.buffalo.cse.green.types.ITypeProperties;
 public final class PlugIn extends AbstractUIPlugin {
 	private static PlugIn PLUGIN = new PlugIn(); //Throws null pointer if not initialized
 	private static ResourceBundle BUNDLE;
-
+	
+	
 	/**
 	 * The collection of design pattern plugins in Green.
 	 * <em>This is not yet implemented.</em>
@@ -166,7 +168,7 @@ public final class PlugIn extends AbstractUIPlugin {
 	 * @param group - The <code>RelationshipGroup</code> to add.
 	 */
 	private static void addRelationshipGroup(RelationshipGroup group) {
-		System.out.println("addRelationshipGroup(RelationshipGroup group)");
+		UmlLog.kek("addRelationshipGroup(RelationshipGroup group)");
 		// map the relationship's part to the group
 		_relationshipMap.put(group.getPartClass(), group);
 		_relationshipGroups.add(group);
