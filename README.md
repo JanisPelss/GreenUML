@@ -15,16 +15,15 @@
 ====================================================================================================================
 
 Green is a LIVE round-tripping editor, meaning that it supports both software engineering and reverse engineering. 
-You can use green to create a UML class diagram from code, or to generate code by drawing a class diagram.
+You can use green to *create a UML class diagram from code, or to generate code by drawing a class diagram*.
 
 Green was developed with the pedagogical goal of focusing students on design. 
-However green has proven to be a robust and flexible tool that can easily provide UML support in any environment.
+However it has proven to be a robust and flexible tool that can easily provide UML support in any environment.
+
 The editor features a simple point-and-click interface. Right-clicking in the editor brings up a 
 context-sensitive menu that includes features such as the refactoring and quick-fix functionality.
+Green supports exporting files to JPG, PNG and GIF formats, as well as saving them as Green UML projects, so that you can share you diagrams without any issues.
 
-Green supports exporting files to jpg, png and gif format, so that you can share you diagrams without any issues.
-
-====================================================================================================================
 
 ## Requirements
 Eclipse 4.6 Neon
