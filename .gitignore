@@ -13,5 +13,7 @@ hs_err_pid*
 **/target/**
 
 
-GreenUpdateSite/features
-GreenUpdateSite/plugins
+GreenUpdateSite/features/
+GreenUpdateSite/plugins/
+
+.metadata
