@@ -23,6 +23,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.swt.graphics.Image;
 
 import edu.buffalo.cse.green.GreenException;
+import edu.buffalo.cse.green.UmlLog;
 import edu.buffalo.cse.green.editor.DiagramEditor;
 import edu.buffalo.cse.green.util.ImageWriterFile;
 
@@ -41,10 +42,10 @@ public class GIFFormat implements ISaveFormat {
 		try {
 			ImageWriterFile writer = new ImageWriterFile(
 					new File(fileName).getCanonicalPath(), 2);
-			System.out.println("saving image to stream");
+			UmlLog.kek("saving image to stream");
 			
 			writer.saveFigure(figure);
-			System.out.println("image saved to stream");
+			UmlLog.kek("image saved to stream");
 		} catch (IOException iOE) {
 			GreenException.fileException(
 					GRERR_FILE_NOT_FOUND);

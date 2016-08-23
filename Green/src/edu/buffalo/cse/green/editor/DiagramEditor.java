@@ -181,6 +181,7 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
 import edu.buffalo.cse.green.GreenException;
 import edu.buffalo.cse.green.PlugIn;
+import edu.buffalo.cse.green.UmlLog;
 import edu.buffalo.cse.green.constants.PluginConstants;
 import edu.buffalo.cse.green.editor.action.ContextAction;
 import edu.buffalo.cse.green.editor.action.Submenu;
@@ -304,9 +305,9 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		_editors.add(this);
 		_bendpoints = new ArrayList<BendpointInformation>();
 		setEditDomain(new DefaultEditDomain(this));
-		System.out.println("Adding command listener");
+		UmlLog.kek(("Adding command listener"));
 		getCommandStack().addCommandStackEventListener(this);
-		System.out.println("Command listener added");
+		UmlLog.kek("Command listener added");
 		getCommandStack().setUndoLimit(100);
 		_root = new RootModel();
 		_cuMap = new CompilationUnitMap();

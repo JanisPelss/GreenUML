@@ -11,7 +11,7 @@ public class UmlLog {
  public static int i=0;
 
 	
-	public static void kek(String kek1){
+	public static void kek(String lmao){
 	
 		
 	    Logger logger = Logger.getLogger("MyLog");  
@@ -27,7 +27,7 @@ public class UmlLog {
 	        fh.setFormatter(formatter);  
 
 	        // the following statement is used to log any messages  
-	       // logger.info("GreenUML debug log");  
+	       logger.info("GreenUML debug log");  
 
 	    } catch (SecurityException e) {  
 	        e.printStackTrace();  
@@ -36,13 +36,15 @@ public class UmlLog {
 	    }  
 	    i++;
 	}
-	    logger.info(kek1); 
+	    logger.info(lmao);
 		
 		
 		
 	}
 
-
+ public void kek2 (String la){
+	 
+ }
 
 
 
