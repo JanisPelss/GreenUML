@@ -65,7 +65,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 		_cache = new RootModelCache();
 		_relationships = new RelationshipCache();
 		_relationshipModels = new ArrayList<RelationshipModel>();
-		UmlLog.kek("RootModel instance created.");
+		UmlLog.addToLog("RootModel instance created.");
 		
 	}
 	
@@ -83,7 +83,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 */
 	@Override
 	public RootModel getRootModel() {
-		UmlLog.kek("getRootMOdel()");
+		UmlLog.addToLog("getRootMOdel()");
 		return this;
 	}
 
