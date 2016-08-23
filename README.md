@@ -15,7 +15,7 @@
 ====================================================================================================================
 
 Green is a LIVE round-tripping editor, meaning that it supports both software engineering and reverse engineering. 
-You can use green to *create a UML class diagram from code, or to generate code by drawing a class diagram*.
+You can use green to create a UML class diagram from code, or to generate code by drawing a class diagram.
 
 Green was developed with the pedagogical goal of focusing students on design. 
 However it has proven to be a robust and flexible tool that can easily provide UML support in any environment.
@@ -66,12 +66,12 @@ Please note that we do not guarantee bug fixes or updates in the future.
 ## License information
 - This software is distributed under [Eclipse Public License - v 1.0](https://www.eclipse.org/legal/epl-v10.html). 
 Please see it for terms of use and redistribution. 
-- Alternatively, TL;DR version is available [here](https://www.tldrlegal.com/l/epl).
+- Alternatively, a TL;DR version is available [here](https://www.tldrlegal.com/l/epl).
 
 ## Origins, historical versions
-- Green UML was originally developed by Colin Fike, Remo Fischione, Nicholas Wheeler from Computer Science and Engineering Department at University at Buffalo.
-- The original versions of Green UML can be obtained [here](http://green.sourceforge.net/builds.html), however, the last updates there date back to 2011 and to Eclipse 3.5
+- Green UML was originally developed by Dr. Carl Alphonce, Colin Fike, Remo Fischione, Nicholas Wheeler and others from Computer Science and Engineering Department at University at Buffalo.
+- The original versions of Green UML can be obtained [here](http://green.sourceforge.net/builds.html), however, the last updates there date back to 2009 and Eclipse 3.5
 - Original web page: [green.sourceforge.net](http://green.sourceforge.net)
-- This project is forked from [this GitHub repository](https://github.com/fmjrey/Green-UML)
+- The project is forked from [this GitHub repository](https://github.com/ValdisVitolins/Green-UML)
 
 
