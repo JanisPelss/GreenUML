@@ -4,20 +4,22 @@
 <toc label="Green Users Guide">
   <topic label="Green's Philosophy" href="html/philosophy.html"/>
   <topic id="stuff" label="Using Green">
-  	<topic label="Overview" href="html/overview.html"/>
-  	<topic label="Diagram Management" href="html/diagram_manage.html"></topic>
+    <topic label="Overview" href="html/overview.html"/>
+    <topic label="Diagram Management" href="html/diagram_manage.html"></topic>
     <topic label="Display Customization" href="html/diagram_edit.html"/>
     <topic label="Context Menus" href="html/context_menus.html"/>
     <topic label="Code Navigation" href="html/navigation.html"/>
-  <topic label="Creating a new diagram" href="html/tut_newDiagram.html" /><topic label="Creating classes and Relationships in Green" href="html/tut_classAndRelationship.html" /></topic>
+    <topic label="Creating a new diagram" href="html/tutorial_new_diagram.html" />
+    <topic label="Creating classes and Relationships in Green" href="html/tutorial_classes_relationships.html" />
+  </topic>
 
   <topic id="preferences" label="Preferences">
     <topic label="General Preferences" href="html/pref_general.html"/>
-    <topic label="Class Boxes" href="html/pref_classBoxes.html"/>
-    <topic label="Colors and Fonts" href="html/pref_colors.html"></topic>
+    <topic label="Class Boxes" href="html/pref_class_boxes.html"/>
+    <topic label="Colors and Fonts" href="html/pref_colors.html"/>
   </topic>
 
   <topic label="Contact Information" href="html/contact.html"/>
   <topic label="FAQs Index" href="html/faq.html"/>
-  <topic label="Installation and Updates" href="html/InstallationProcedures.html"/>
+  <topic label="Installation and Updates" href="html/installation_updates.html"/>
 </toc>
