@@ -1,4 +1,4 @@
-ppackage edu.buffalo.cse.green;
+package edu.buffalo.cse.green;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
