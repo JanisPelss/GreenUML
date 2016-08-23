@@ -34,6 +34,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 
+import edu.buffalo.cse.green.UmlLog;
 import edu.buffalo.cse.green.editor.controller.AbstractPart;
 import edu.buffalo.cse.green.editor.controller.MemberPart;
 import edu.buffalo.cse.green.editor.controller.TypePart;
@@ -131,7 +132,7 @@ public class OutlinePage extends ContentOutlinePage {
      */
     public void setSelection(ISelection selection) {
     	if(selection== null){
-    		System.out.println("setSelection() -- selection is null");
+    		UmlLog.kek("setSelection() -- selection is null");
     	}
         super.setSelection(selection);
 
@@ -141,12 +142,12 @@ public class OutlinePage extends ContentOutlinePage {
         _sel = (IStructuredSelection) selection;
         AbstractPart part = (AbstractPart) _sel.getFirstElement();
         if(part==null){
-        	System.out.println("setSelection -- part=null");
+        	UmlLog.kek("setSelection -- part=null");
         	
         }
-        System.out.println("Setselection");
+        UmlLog.kek("Setselection");
         if(DiagramEditor.getActiveEditor()==null){
-        	System.out.println("Diagram editor_Active is null");
+        	UmlLog.kek("Diagram editor_Active is null");
         }
         DiagramEditor.getActiveEditor().selectionChanged(
         		DiagramEditor.getActiveEditor(), new StructuredSelection(part));
