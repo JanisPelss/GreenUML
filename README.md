@@ -4,6 +4,7 @@ Green UML release 4.6.0
 
 Originally developed by Colin Fike, Remo Fischione, Nicholas Wheeler,
 Computer Science and Engineering Department at University at Buffalo.
+
 Updated for Eclipse 4.6 Neon by **********OUR NAMES or something********** ? 
 
 This software is distributed under Eclipse Public License - v 1.0. 
