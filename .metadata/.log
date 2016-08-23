@@ -525,3 +525,89 @@ Contains: Error parsing feature: "require" must include at least one "import" el
 !MESSAGE Problems parsing the feature file:/home/student/.p2/pool/features/org.eclipse.epp.package.java.feature_4.6.0.20160613-1800/feature.xml.
 !SUBENTRY 2 org.eclipse.equinox.p2.publisher.eclipse 4 17 2016-08-23 09:55:41.486
 !MESSAGE Error parsing feature: "require" must include at least one "import" element.
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-23 11:08:51.372
+!MESSAGE Nothing to fetch.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Nothing to fetch.
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:106)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.api.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:135)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:136)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	... 3 more
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1155)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 5 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2016-08-23 11:08:51.373
+!MESSAGE Nothing to fetch.
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:135)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:136)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1155)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 5 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-23 11:08:51.374
+!MESSAGE Nothing to fetch.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Nothing to fetch.
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:106)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.api.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:135)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:136)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	... 3 more
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1155)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 5 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2016-08-23 11:08:51.374
+!MESSAGE Nothing to fetch.
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:135)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:136)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:103)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.runInWorkspace(FetchOperationUI.java:123)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1155)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 5 more
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2016-08-23 11:49:01.709
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at jar:file:/home/student/GreenUMLPlugin.zip!/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:395)
+	at sun.reflect.GeneratedMethodAccessor371.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:116)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.fail(CachingRepositoryManager.java:314)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:217)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:437)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2016-08-23 11:49:01.710
+!MESSAGE No repository found at jar:file:/home/student/GreenUMLPlugin.zip!/.
