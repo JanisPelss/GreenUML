@@ -15,5 +15,6 @@ hs_err_pid*
 
 GreenUpdateSite/features/
 GreenUpdateSite/plugins/
+GreenUpdateSite/logs.zip
 
 .metadata
