@@ -132,7 +132,7 @@ public class OutlinePage extends ContentOutlinePage {
      */
     public void setSelection(ISelection selection) {
     	if(selection== null){
-    		UmlLog.kek("setSelection() -- selection is null");
+    		UmlLog.addToLog("setSelection() -- selection is null");
     	}
         super.setSelection(selection);
 
@@ -142,12 +142,12 @@ public class OutlinePage extends ContentOutlinePage {
         _sel = (IStructuredSelection) selection;
         AbstractPart part = (AbstractPart) _sel.getFirstElement();
         if(part==null){
-        	UmlLog.kek("setSelection -- part=null");
+        	UmlLog.addToLog("setSelection -- part=null");
         	
         }
-        UmlLog.kek("Setselection");
+        UmlLog.addToLog("Setselection");
         if(DiagramEditor.getActiveEditor()==null){
-        	UmlLog.kek("Diagram editor_Active is null");
+        	UmlLog.addToLog("Diagram editor_Active is null");
         }
         DiagramEditor.getActiveEditor().selectionChanged(
         		DiagramEditor.getActiveEditor(), new StructuredSelection(part));
