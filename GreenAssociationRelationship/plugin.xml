@@ -2,6 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
+         id="edu.buffalo.cse.green.relationship.association"
+         name="Association"
          point="edu.buffalo.cse.green.relationships">
       <controller
             class="edu.buffalo.cse.green.relationship.association.AssociationPart">
