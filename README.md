@@ -30,7 +30,7 @@ Eclipse 4.6 Neon
 
 INSTALLATION
 ------------
-THROUGH ECLIPSE
+Through Eclipse
 - Open Eclipse, and navigate to Help > Install New Software...
 - Click on Add... 
 - Fill the fields as following:
@@ -39,7 +39,7 @@ THROUGH ECLIPSE
 - Click OK 
 - Choose what features to install and follow further instructions
 
-THROUGH FILE SYSTEM DROP-IN
+Through file system drop-in
 - After downloading the Green zip file, extract the contents to [Eclipse installation directory]\dropins\
 - If warned that any existing files with the same name will be overwritten, select "Yes to All"
 
@@ -47,6 +47,11 @@ THROUGH FILE SYSTEM DROP-IN
 CONTRIBUTE
 ----------
 - Source code: https://github.com/JanisPelss/GreenUML
+
+Requirements to develop Green UML:
+- Eclipse Modeling Tools (package Neon R): http://www.eclipse.org/downloads/packages/release/Neon/R
+- GMF Tooling: http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/
+- Eclipse Graphical Editing Framework (GEF) 4.0.0: http://download.eclipse.org/tools/gef/gef4/updates/releases/
 
 
 ADDITIONAL INFORMATION
