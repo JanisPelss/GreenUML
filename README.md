@@ -33,9 +33,9 @@ INSTALLATION
 Through Eclipse
 - Open Eclipse, and navigate to Help > Install New Software...
 - Click on Add... 
-- Fill the fields as following:
-    Name: GreenUML
-    Location: *******UPDATE LINK GOES HERE**********
+- Fill the fields as following: <br>
+     Name: GreenUML <br>
+     Location: *******UPDATE LINK GOES HERE**********
 - Click OK 
 - Choose what features to install and follow further instructions
 
