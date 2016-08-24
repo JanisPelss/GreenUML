@@ -13,7 +13,11 @@ package edu.buffalo.cse.green;
 import static edu.buffalo.cse.green.GreenException.GRERR_DUPLICATE_EXTENSION;
 import static edu.buffalo.cse.green.GreenException.GRERR_INVALID_CONTEXT_ACTION;
 import static edu.buffalo.cse.green.preferences.PreferenceInitializer.P_FILTERS_MEMBER;
+import static edu.buffalo.cse.green.preferences.PreferenceInitializer.P_LOG_TO_STD;
+import static edu.buffalo.cse.green.preferences.PreferenceInitializer.P_LOG_TO_FILE;
+import static edu.buffalo.cse.green.preferences.PreferenceInitializer.P_LOG_FILE_NAME;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -60,13 +64,16 @@ import edu.buffalo.cse.green.editor.controller.TypePart;
 import edu.buffalo.cse.green.editor.model.MemberModel;
 import edu.buffalo.cse.green.editor.model.filters.MemberFilter;
 import edu.buffalo.cse.green.editor.save.ISaveFormat;
+import edu.buffalo.cse.green.logging.OutputStreamSplitter;
+import edu.buffalo.cse.green.logging.UmlLog;
 import edu.buffalo.cse.green.relationships.RelationshipGenerator;
 import edu.buffalo.cse.green.relationships.RelationshipGroup;
 import edu.buffalo.cse.green.relationships.RelationshipRecognizer;
 import edu.buffalo.cse.green.relationships.RelationshipRemover;
 import edu.buffalo.cse.green.relationships.RelationshipSubtype;
 import edu.buffalo.cse.green.types.ITypeProperties;
-import edu.buffalo.cse.green.UmlLog;
+import edu.buffalo.cse.green.logging.UmlLog;
+import edu.buffalo.cse.green.logging.UmlLogAdapter;
 
 /**
  * The main plugin class to be used in the desktop. This class loads in all
@@ -168,7 +175,7 @@ public final class PlugIn extends AbstractUIPlugin {
 	 * @param group - The <code>RelationshipGroup</code> to add.
 	 */
 	private static void addRelationshipGroup(RelationshipGroup group) {
-		UmlLog.addToLog("addRelationshipGroup(RelationshipGroup group)");
+		System.out.println("addRelationshipGroup(RelationshipGroup group)");
 		// map the relationship's part to the group
 		_relationshipMap.put(group.getPartClass(), group);
 		_relationshipGroups.add(group);
@@ -223,8 +230,14 @@ public final class PlugIn extends AbstractUIPlugin {
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
+		
+		boolean prefLogToStd = getPreferences().getBoolean(P_LOG_TO_STD);
+		boolean prefLogToFile = getPreferences().getBoolean(P_LOG_TO_FILE);
+		String  prefLogFileName = getPreferences().getString(P_LOG_FILE_NAME);
+		UmlLog.redirectOutput(prefLogToStd, prefLogToFile, prefLogFileName);
+		
 		GreenException.warn("GreenUML Plugin activated");
-
+		
 		try {
 			// load plugins: save types
 			for (IConfigurationElement element

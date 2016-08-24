@@ -34,13 +34,13 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 
-import edu.buffalo.cse.green.UmlLog;
 import edu.buffalo.cse.green.editor.controller.AbstractPart;
 import edu.buffalo.cse.green.editor.controller.MemberPart;
 import edu.buffalo.cse.green.editor.controller.TypePart;
 import edu.buffalo.cse.green.editor.model.AbstractModel;
 import edu.buffalo.cse.green.editor.model.MemberModel;
 import edu.buffalo.cse.green.editor.model.TypeModel;
+import edu.buffalo.cse.green.logging.UmlLog;
 import edu.buffalo.cse.green.relationships.RelationshipGroup;
 
 
@@ -132,7 +132,7 @@ public class OutlinePage extends ContentOutlinePage {
      */
     public void setSelection(ISelection selection) {
     	if(selection== null){
-    		UmlLog.addToLog("setSelection() -- selection is null");
+    		System.out.println("setSelection() -- selection is null");
     	}
         super.setSelection(selection);
 
@@ -142,12 +142,12 @@ public class OutlinePage extends ContentOutlinePage {
         _sel = (IStructuredSelection) selection;
         AbstractPart part = (AbstractPart) _sel.getFirstElement();
         if(part==null){
-        	UmlLog.addToLog("setSelection -- part=null");
+        	System.out.println("setSelection -- part=null");
         	
         }
-        UmlLog.addToLog("Setselection");
+        System.out.println("Setselection");
         if(DiagramEditor.getActiveEditor()==null){
-        	UmlLog.addToLog("Diagram editor_Active is null");
+        	System.out.println("Diagram editor_Active is null");
         }
         DiagramEditor.getActiveEditor().selectionChanged(
         		DiagramEditor.getActiveEditor(), new StructuredSelection(part));

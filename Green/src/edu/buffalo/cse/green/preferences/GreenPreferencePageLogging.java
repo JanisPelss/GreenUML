@@ -9,6 +9,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import edu.buffalo.cse.green.PlugIn;
 import edu.buffalo.cse.green.editor.DiagramEditor;
+import edu.buffalo.cse.green.logging.UmlLog;
 
 import static edu.buffalo.cse.green.preferences.PreferenceInitializer.P_LOG_TO_STD;
 import static edu.buffalo.cse.green.preferences.PreferenceInitializer.P_LOG_TO_FILE;
@@ -35,22 +36,9 @@ public class GreenPreferencePageLogging
 		_editorLogToStd = new BooleanFieldEditor(P_LOG_TO_STD, "Log to stdout and stderr", getFieldEditorParent());
 		_editorLogToFile = new BooleanFieldEditor(P_LOG_TO_FILE, "Log to file", getFieldEditorParent());
 		_editorFileName = new NewFileFieldEditor(P_LOG_FILE_NAME, "Log file name", getFieldEditorParent());
-		
-		_editorLogToFile.setPropertyChangeListener(new IPropertyChangeListener() {
-			public void propertyChange(PropertyChangeEvent e) {
-				//_editorFileName.setEnabled(_editorLogToFile.getBooleanValue(), getFieldEditorParent());
-				String __s__ = "> > >";
-				try { java.io.File f = new java.io.File("/home/student/Documents/#####.txt"); java.io.BufferedWriter w = new java.io.BufferedWriter(new java.io.FileWriter(f, true)); w.write(__s__); w.newLine(); w.flush(); w.close(); } catch (java.io.IOException ex) {}
-				System.err.println("dfgsdfjkldfjkldfg");
-			}
-		});
-		
-		
 		addField(_editorLogToStd);
 		addField(_editorLogToFile);
 		addField(_editorFileName);
-		
-		
 		
 		adjustGridLayout();
 	}
@@ -69,10 +57,9 @@ public class GreenPreferencePageLogging
 		
 		boolean ok = super.performOk();  // Saves preferences.
 		
-		for (DiagramEditor editor : DiagramEditor.getEditors()) {
-			editor.refresh();
-		}
-		
+		UmlLog.redirectOutput( _editorLogToStd.getBooleanValue(),
+		                       _editorLogToFile.getBooleanValue(),
+		                       _editorFileName.getStringValue() );
 		return ok;
 	}
 	

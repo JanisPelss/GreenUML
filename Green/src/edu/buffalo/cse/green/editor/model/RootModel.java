@@ -35,11 +35,11 @@ import org.eclipse.jdt.core.JavaCore;
 
 import edu.buffalo.cse.green.GreenException;
 import edu.buffalo.cse.green.PlugIn;
-import edu.buffalo.cse.green.UmlLog;
 import edu.buffalo.cse.green.editor.DiagramEditor;
 import edu.buffalo.cse.green.editor.controller.RelationshipPart;
 import edu.buffalo.cse.green.editor.controller.RootPart;
 import edu.buffalo.cse.green.editor.model.commands.DeleteCommand;
+import edu.buffalo.cse.green.logging.UmlLog;
 import edu.buffalo.cse.green.relationships.RelationshipCache;
 import edu.buffalo.cse.green.xml.XMLConverter;
 
@@ -65,7 +65,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 		_cache = new RootModelCache();
 		_relationships = new RelationshipCache();
 		_relationshipModels = new ArrayList<RelationshipModel>();
-		UmlLog.addToLog("RootModel instance created.");
+		System.out.println("RootModel instance created.");
 		
 	}
 	
@@ -83,7 +83,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 */
 	@Override
 	public RootModel getRootModel() {
-		UmlLog.addToLog("getRootMOdel()");
+		System.out.println("getRootMOdel()");
 		return this;
 	}
 
@@ -93,7 +93,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 * @param model - The <code>TypeModel</code> to remove.
 	 */
 	protected void removeChildModel(TypeModel model) {
-		UmlLog.addToLog("removeChildModel()");
+		System.out.println("removeChildModel()");
 		List<RelationshipModel> edges = new ArrayList<RelationshipModel>();
 		edges.addAll(model.getIncomingEdges());
 		edges.addAll(model.getOutgoingEdges());
@@ -110,7 +110,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 * @param model - The <code>RelationshipModel</code> to remove.
 	 */
 	protected void removeChildModel(RelationshipModel model) {
-		UmlLog.addToLog("removeChildModel()(relmodel)");
+		System.out.println("removeChildModel()(relmodel)");
 		getRelationshipCache().removeRelationshipModel(model);
 		_relationshipModels.remove((RelationshipModel) model);
 		removeChild(model);
@@ -210,7 +210,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 *         <code>IType</code>
 	 */
 	public TypeModel createTypeModel(IType type) {
-		UmlLog.addToLog("TypeMOdel createTypeModel() invoked");
+		System.out.println("TypeMOdel createTypeModel() invoked");
 		TypeModel typeModel = (TypeModel) getModelFromElement(type);
 		
 		// create the type if it doesn't exist
@@ -242,21 +242,21 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 
 			if (_project == null) {
 				if (!type.isBinary()) {
-					UmlLog.addToLog("setting _project ancestor");
+					System.out.println("setting _project ancestor");
 					setProject((IJavaProject) type.getAncestor(
 							IJavaElement.JAVA_PROJECT));
 				}
 			} else if (!type.getAncestor(IJavaElement.JAVA_PROJECT).equals(
 					_project)) {
-				UmlLog.addToLog("setting _project in wrong editor");
+				System.out.println("setting _project in wrong editor");
 				GreenException.warn(GRWARN_ELEMENT_IN_WRONG_EDITOR);
 			}
 		} else {
-			UmlLog.addToLog("Rootmodel var _project is not null.");
+			System.out.println("Rootmodel var _project is not null.");
 			if (PlugIn.filterMember(typeModel)) {
-				UmlLog.addToLog("Removing _project child.");
+				System.out.println("Removing _project child.");
 				removeChild(typeModel);
-				UmlLog.addToLog("returning _project.");
+				System.out.println("returning _project.");
 				return typeModel;
 			}
 
@@ -618,10 +618,10 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	@Override
 	public String toString() {
 		if(_project != null){
-			UmlLog.addToLog("_project is not null");
+			System.out.println("_project is not null");
 			
 		} else {
-			UmlLog.addToLog("_project is null");
+			System.out.println("_project is null");
 			
 		}
 		return _project.getElementName();
