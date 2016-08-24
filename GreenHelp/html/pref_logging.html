@@ -2,12 +2,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Type Boxes</title>
+<title>Logging</title>
 </head>
 
 <body>
-<h3><font face="Arial, Helvetica, sans-serif">Preferences - Logging</font></h3>
 
+<h3><font face="Arial, Helvetica, sans-serif">Preferences &mdash; Logging</font></h3>
+Logging preferences control the destination of <i>Green UML</i>&rsquo;s diagnostic messages. By default,
+they are sent to the standard output stream (<i>stdout</i>) and the standard error stream (<i>stderr</i>) which
+in turn end up on the console.
 
+<br><br>
+
+The following settings let you redirect those messages to a file, while optionally preserving
+the default destination, or turn them off completely. These settings are in effect only after the
+<i>Green UML</i> plug-in is initialized by <i>Eclipse</i>.
+
+<br><br><br>
+
+<img src = "img/preference4.png">
+
+<br><br>
+
+<font face="Arial, Helvetica, sans-serif"><b>Log to stdout and stderr</b></font>
+<br>
+Send diagnostic messages to the standard output stream and the standard error stream
+(this is the default behaviour).
+
+<br><br>
+
+<font face="Arial, Helvetica, sans-serif"><b>Log to file</b></font>
+<br>
+Send diagnostic messages to a file. If you enable this option, you must also provide the name for
+the log file.
+
+<br><br>
+
+<font face="Arial, Helvetica, sans-serif"><b>Log file name</b></font>
+<br>
+The name and location of the log file which is supposed to receive the diagnostic messages.
+If the file already exists, new data will be appended to its end.
+<br><br>
 </body>
 </html>

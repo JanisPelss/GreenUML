@@ -35,7 +35,7 @@ public class UmlLog {
 	}
 	
 	
-	//------ Global Settings -----
+	// ----- Global Settings -----
 	
 	
 	private static final PrintStream stdout = System.out;
