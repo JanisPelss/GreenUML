@@ -48,6 +48,7 @@ public class NewFileFieldEditor extends FileFieldEditor {
         FileDialog dialog = new FileDialog(getShell(), SWT.SAVE | SWT.SHEET);
         dialog.setOverwrite(false);
         dialog.setText("Log File");
+        dialog.setOverwrite(true);
         dialog.setFileName(startingDirectory);
         
         String file = dialog.open();
