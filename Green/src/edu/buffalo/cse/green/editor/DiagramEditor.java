@@ -1117,7 +1117,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 			if (x == 1) {
 				newPath = new Path(sPath + extension).removeFirstSegments(1);
 			} else {
-				newPath = new Path(sPath + "." + x + extension).removeFirstSegments(1);
+				newPath = new Path(sPath + "_" + x + extension).removeFirstSegments(1);
 			}
 			
 			file = project.getFile(newPath);
