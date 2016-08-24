@@ -7,8 +7,6 @@ hs_err_pid*
 **/bin/**
 **/target/**
 
-GreenUpdateSite/features/
-GreenUpdateSite/plugins/
 GreenUpdateSite/logs.zip
 
 .metadata
