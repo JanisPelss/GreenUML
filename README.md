@@ -21,7 +21,7 @@ The editor features a simple point-and-click interface. Right-clicking in the ed
 context-sensitive menu that includes features such as the refactoring and quick-fix functionality.
 Green supports exporting files to JPG, PNG and GIF formats, as well as saving them as Green UML projects, so that you can share you diagrams without any issues.
 
-## What has been changed
+## What's been changed in this version
 - This Green UML version works properly on Eclipse 4.6 Neon
 - Fixed all discovered bugs
 - Added logger and an option to write output to file
@@ -53,8 +53,8 @@ Eclipse 4.6 Neon
 If you want to contribute to this project, please create a fork of this and commit all of your changes there. 
 
 ### Requirements to develop Green UML:
-- Eclipse Modelling Tools (package Neon R): http://www.eclipse.org/downloads/packages/release/Neon/R
-- GMF Tooling: http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/
+- [Eclipse Modelling Tools (package Neon R)](http://www.eclipse.org/downloads/packages/release/Neon/R)
+- [GMF Tooling](http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/)
 
 ### What can be improved:
 - Green UML is working only on Eclipse 4.6 Neon now, further development could target other Eclipse versions
