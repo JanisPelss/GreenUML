@@ -50,6 +50,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public static final String P_FORCE_DIA_IN_PROJECT = "dia.in.project";
 	public static final String P_DISPLAY_INCREMENTAL_EXPLORER_DIA = "display.inc.explr.dia";
 	public static final String P_AUTOARRANGE = "auto.arrange";
+	public static final String P_LOG_TO_STD = "log.to.std";
+	public static final String P_LOG_TO_FILE = "log.to.file";
+	public static final String P_LOG_FILE_NAME = "log.file.name";
 	
 	/**
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
@@ -85,6 +88,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(P_MANHATTAN_ROUTING, false);
 		store.setDefault(P_DISPLAY_INCREMENTAL_EXPLORER_DIA, true);
 		store.setDefault(P_AUTOARRANGE, false);
+		store.setDefault(P_LOG_TO_STD, true);
+		store.setDefault(P_LOG_TO_FILE, false);
+		store.setDefault(P_LOG_FILE_NAME, "");
 		
 		
 		//FIXME Font errors

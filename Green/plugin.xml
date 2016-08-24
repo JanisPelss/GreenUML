@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin
-   id="edu.buffalo.cse.green"
-   name="Green Plug-in"
-   version="3.5.0.qualifier"
-   provider-name="University at Buffalo, State University of New York"
-   class="edu.buffalo.cse.green.PlugIn">
+<?eclipse version="4.6"?>
+<plugin>
 
-   <runtime>
-      <library name="Green.jar">
-         <export
-               name="*">
-         </export>
-      </library>
-      <library name="lib/CCVisu-3.0.jar">
-         <export
-               name="*">
-         </export>
-      </library>
-   </runtime>
-
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.gef"/>
-      <import plugin="org.eclipse.jdt.core"/>
-      <import plugin="org.eclipse.jdt.ui"/>
-      <import plugin="org.eclipse.jface.text"/>
-      <import plugin="org.eclipse.ltk.core.refactoring"/>
-      <import plugin="org.eclipse.ltk.ui.refactoring"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.ui.editors"/>
-      <import plugin="org.eclipse.ui.views"/>
-   </requires>
- 
    <extension-point id="relationships"
 		 name="Green Relationships"
 		 schema="schema/relationships.exsd"/>
@@ -272,7 +239,7 @@
       <page
             class="edu.buffalo.cse.green.preferences.GreenPreferencePage"
             id="edu.buffalo.cse.green.preferences.GreenPreferencePage"
-            name="Green"/>
+            name="Green UML"/>
       <page
             category="edu.buffalo.cse.green.preferences.GreenPreferencePage"
             class="edu.buffalo.cse.green.preferences.GreenPreferencePageClassBox"
@@ -283,6 +250,11 @@
             class="edu.buffalo.cse.green.preferences.GreenPreferencePageColors"
             id="edu.buffalo.cse.green.preferences.GreenPreferencePage.colors"
             name="Colors and Fonts"/>
+      <page
+            category="edu.buffalo.cse.green.preferences.GreenPreferencePage"
+            class="edu.buffalo.cse.green.preferences.GreenPreferencePageLogging"
+            id="edu.buffalo.cse.green.preferences.GreenPreferencePage.logging"
+            name="Logging"/>
    </extension>
    
    <extension point="org.eclipse.core.runtime.preferences">

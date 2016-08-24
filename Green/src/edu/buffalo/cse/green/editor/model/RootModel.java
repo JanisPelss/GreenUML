@@ -65,7 +65,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 		_cache = new RootModelCache();
 		_relationships = new RelationshipCache();
 		_relationshipModels = new ArrayList<RelationshipModel>();
-		UmlLog.kek("RootModel instance created.");
+		UmlLog.addToLog("RootModel instance created.");
 		
 	}
 	
@@ -83,7 +83,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 */
 	@Override
 	public RootModel getRootModel() {
-		UmlLog.kek("getRootMOdel()");
+		UmlLog.addToLog("getRootMOdel()");
 		return this;
 	}
 
@@ -93,7 +93,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 * @param model - The <code>TypeModel</code> to remove.
 	 */
 	protected void removeChildModel(TypeModel model) {
-		UmlLog.kek("removeChildModel()");
+		UmlLog.addToLog("removeChildModel()");
 		List<RelationshipModel> edges = new ArrayList<RelationshipModel>();
 		edges.addAll(model.getIncomingEdges());
 		edges.addAll(model.getOutgoingEdges());
@@ -110,7 +110,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 * @param model - The <code>RelationshipModel</code> to remove.
 	 */
 	protected void removeChildModel(RelationshipModel model) {
-		UmlLog.kek("removeChildModel()(relmodel)");
+		UmlLog.addToLog("removeChildModel()(relmodel)");
 		getRelationshipCache().removeRelationshipModel(model);
 		_relationshipModels.remove((RelationshipModel) model);
 		removeChild(model);
@@ -210,7 +210,7 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	 *         <code>IType</code>
 	 */
 	public TypeModel createTypeModel(IType type) {
-		UmlLog.kek("TypeMOdel createTypeModel() invoked");
+		UmlLog.addToLog("TypeMOdel createTypeModel() invoked");
 		TypeModel typeModel = (TypeModel) getModelFromElement(type);
 		
 		// create the type if it doesn't exist
@@ -242,21 +242,21 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 
 			if (_project == null) {
 				if (!type.isBinary()) {
-					UmlLog.kek("setting _project ancestor");
+					UmlLog.addToLog("setting _project ancestor");
 					setProject((IJavaProject) type.getAncestor(
 							IJavaElement.JAVA_PROJECT));
 				}
 			} else if (!type.getAncestor(IJavaElement.JAVA_PROJECT).equals(
 					_project)) {
-				UmlLog.kek("setting _project in wrong editor");
+				UmlLog.addToLog("setting _project in wrong editor");
 				GreenException.warn(GRWARN_ELEMENT_IN_WRONG_EDITOR);
 			}
 		} else {
-			UmlLog.kek("Rootmodel var _project is not null.");
+			UmlLog.addToLog("Rootmodel var _project is not null.");
 			if (PlugIn.filterMember(typeModel)) {
-				UmlLog.kek("Removing _project child.");
+				UmlLog.addToLog("Removing _project child.");
 				removeChild(typeModel);
-				UmlLog.kek("returning _project.");
+				UmlLog.addToLog("returning _project.");
 				return typeModel;
 			}
 
@@ -618,10 +618,10 @@ public class RootModel extends AbstractModel<AbstractModel, AbstractModel, IJava
 	@Override
 	public String toString() {
 		if(_project != null){
-			UmlLog.kek("_project is not null");
+			UmlLog.addToLog("_project is not null");
 			
 		} else {
-			UmlLog.kek("_project is null");
+			UmlLog.addToLog("_project is null");
 			
 		}
 		return _project.getElementName();

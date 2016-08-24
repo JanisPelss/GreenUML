@@ -305,9 +305,9 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		_editors.add(this);
 		_bendpoints = new ArrayList<BendpointInformation>();
 		setEditDomain(new DefaultEditDomain(this));
-		UmlLog.kek(("Adding command listener"));
+		UmlLog.addToLog("Adding command listener");
 		getCommandStack().addCommandStackEventListener(this);
-		UmlLog.kek("Command listener added");
+		UmlLog.addToLog("Command listener added");
 		getCommandStack().setUndoLimit(100);
 		_root = new RootModel();
 		_cuMap = new CompilationUnitMap();

@@ -42,10 +42,10 @@ public class GIFFormat implements ISaveFormat {
 		try {
 			ImageWriterFile writer = new ImageWriterFile(
 					new File(fileName).getCanonicalPath(), 2);
-			UmlLog.kek("saving image to stream");
+			UmlLog.addToLog("Saving image to stream");
 			
 			writer.saveFigure(figure);
-			UmlLog.kek("image saved to stream");
+			UmlLog.addToLog("Image saved to stream");
 		} catch (IOException iOE) {
 			GreenException.fileException(
 					GRERR_FILE_NOT_FOUND);

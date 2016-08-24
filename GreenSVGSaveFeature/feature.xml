@@ -2,7 +2,7 @@
 <feature
       id="GreenSVGSave"
       label="Green SVG Save"
-      version="3.5.0.qualifier"
+      version="4.6.0.qualifier"
       provider-name="UB CSE"
       os="linux,macosx,win32"
       ws="gtk,win32"
@@ -411,7 +411,7 @@ litigation.
    </license>
 
    <requires>
-      <import feature="Green" version="3.5.0.qualifier"/>
+      <import feature="Green" version="4.6.0.qualifier"/>
       <import plugin="org.apache.batik.ext.awt"/>
       <import plugin="org.apache.batik.svggen"/>
       <import plugin="org.eclipse.gmf.bridge"/>
