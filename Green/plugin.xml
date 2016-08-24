@@ -239,7 +239,7 @@
       <page
             class="edu.buffalo.cse.green.preferences.GreenPreferencePage"
             id="edu.buffalo.cse.green.preferences.GreenPreferencePage"
-            name="Green"/>
+            name="Green UML"/>
       <page
             category="edu.buffalo.cse.green.preferences.GreenPreferencePage"
             class="edu.buffalo.cse.green.preferences.GreenPreferencePageClassBox"
