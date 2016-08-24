@@ -21,9 +21,11 @@ The editor features a simple point-and-click interface. Right-clicking in the ed
 context-sensitive menu that includes features such as the refactoring and quick-fix functionality.
 Green supports exporting files to JPG, PNG and GIF formats, as well as saving them as Green UML projects, so that you can share you diagrams without any issues.
 
-## What's been changed in this version
+## What's new in this version
 - This Green UML version works properly on Eclipse 4.6 Neon
 - Fixed all discovered bugs
+- All other plug-ins necessary for Green UML to work are now installed automatically with the plug-in 
+- Minor UI improvements
 - Added logger and an option to write output to file
 
 ## Requirements
