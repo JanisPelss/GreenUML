@@ -64,13 +64,15 @@ public class GreenPreferencePageLogging
 	 * @see org.eclipse.jface.preference.IPreferencePage#performOk()
 	 */
 	public boolean performOk() {
-		boolean ok = super.performOk();
+		if (!checkPrefs())
+			return false;
+		
+		boolean ok = super.performOk();  // Saves preferences.
 		
 		for (DiagramEditor editor : DiagramEditor.getEditors()) {
 			editor.refresh();
 		}
 		
-		ok &= checkPrefs();
 		return ok;
 	}
 	
