@@ -56,7 +56,7 @@ public class ManageFiltersDialog extends Dialog implements OKCancelListener {
 		super(shell);
 		create();
 		getShell().setText("Manage Filters");
-		getShell().setSize(450, 300);
+		getShell().setSize(630, 300);
 	}
 	
 	/**
