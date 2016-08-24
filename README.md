@@ -17,13 +17,14 @@
 Green is a LIVE round-tripping editor, meaning that it supports both software engineering and reverse engineering. 
 You can use green to create a UML class diagram from code, or to generate code by drawing a class diagram.
 
-Green was developed with the pedagogical goal of focusing students on design. 
-However it has proven to be a robust and flexible tool that can easily provide UML support in any environment.
-
 The editor features a simple point-and-click interface. Right-clicking in the editor brings up a 
 context-sensitive menu that includes features such as the refactoring and quick-fix functionality.
 Green supports exporting files to JPG, PNG and GIF formats, as well as saving them as Green UML projects, so that you can share you diagrams without any issues.
 
+## What has been changed
+- This Green UML version works properly on Eclipse 4.6 Neon
+- Fixed all discovered bugs
+- Added logger and an option to write output to file
 
 ## Requirements
 Eclipse 4.6 Neon
@@ -34,7 +35,7 @@ Eclipse 4.6 Neon
 - Click on Add... 
 - Fill the fields as following: <br>
      Name: GreenUML <br>
-     Location: http://odo.lv/ftp/tools/GreenUML/GreenUpdateSite
+     Location: http://odo.lv/ftp/tools/GreenUpdateSite
 - Click OK 
 - Choose what features to install and follow further instructions
 
@@ -60,7 +61,7 @@ If you want to contribute to this project, please create a fork of this and comm
 - Additional functionality
 
 ## Bugs
-Please report bugs to [GreenUML/issues](https://github.com/JanisPelss/GreenUML/issues) on GitHub. 
+Please report bugs to [GreenUML/issues](https://github.com/ValdisVitolins/GreenUML/issues) on GitHub. 
 Please note that we do not guarantee bug fixes or updates in the future.
 
 ## License information
@@ -72,6 +73,6 @@ Please see it for terms of use and redistribution.
 - Green UML was originally developed by Dr. Carl Alphonce, Colin Fike, Remo Fischione, Nicholas Wheeler and others from Computer Science and Engineering Department at University at Buffalo.
 - The original versions of Green UML can be obtained [here](http://green.sourceforge.net/builds.html), however, the last updates there date back to 2009 and Eclipse 3.5
 - Original web page: [green.sourceforge.net](http://green.sourceforge.net)
-- The project is forked from [this GitHub repository](https://github.com/ValdisVitolins/Green-UML)
+- The project is forked from [this GitHub repository](https://github.com/fmjrey/Green-UML)
 
 
