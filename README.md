@@ -57,7 +57,7 @@ If you want to contribute to this project, please create a fork of this and comm
 
 ### What can be improved:
 - Green UML is working only on Eclipse 4.6 Neon now, further development could target other Eclipse versions
-- ***WHAT ELSE? *** ...
+- Additional functionality
 
 ## Bugs
 Please report bugs to [GreenUML/issues](https://github.com/JanisPelss/GreenUML/issues) on GitHub. 
