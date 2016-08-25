@@ -1964,8 +1964,6 @@ class DiagramEditorFilePolicies {
 					editor.getCurrentFile().getFullPath()).getLocation();
 		}
 		
-		String extension;
-		
 		// Open dialog and ask for a name
 		if (askForName || !filePath.toFile().exists()) {
 			// display the dialog to get the file location
@@ -1975,11 +1973,16 @@ class DiagramEditorFilePolicies {
 			dialog.setFileName(fileName.substring(fileName.lastIndexOf('/') + 1, 
 												  fileName.lastIndexOf('.')));
 
-			List<String> fExt = new ArrayList<String>();
-			List<String> fDesc = new ArrayList<String>();
+			List<String> extensions = new ArrayList<String>();
+			List<String> fExt       = new ArrayList<String>();
+			List<String> fDesc      = new ArrayList<String>();
 
 			// get file extensions
-			for (String ext : PlugIn.getSaveFormats()) {
+			List<String> saveFormats = PlugIn.getSaveFormats();
+			for (int i = 0; i < saveFormats.size(); i++) {
+				String ext = saveFormats.get(i);
+				extensions.add(ext);
+				
 				String sExt = "*." + ext;
 				ISaveFormat format = PlugIn.getSaveFormat(ext);
 				
@@ -1998,7 +2001,24 @@ class DiagramEditorFilePolicies {
 			fileName = dialog.open();
 			
 			// abort if the user pressed cancel
-			if (fileName == null) return;
+			if (fileName == null)
+				return;
+			else {
+				// The selected value of the drop-down list of formats:
+				int filterIdx = dialog.getFilterIndex();
+				if (filterIdx != -1) {
+					String ext = extensions.get(filterIdx);
+					
+					// Append the appropriate extension to the filename if the current one is different
+					// from what the selected format requires:
+					if ( !fileName.endsWith("." + ext) &&
+					     !(fileName.endsWith(".dia") && ext.equals(PluginConstants.GREEN_EXTENSION)) )
+						 // Both "dia" and "grn" are acceptable for the "Green File" format.
+					{
+						fileName += ("." + ext);
+					}
+				}
+			}
 			
 			// see if the file path is in the workspace
 			filePath = new Path(fileName);
@@ -2053,16 +2073,16 @@ class DiagramEditorFilePolicies {
 			}
 		}
 
-		extension = filePath.getFileExtension();
+		String ext = filePath.getFileExtension();
 		ISaveFormat format;
-		if (extension.equals("dia") || extension.equals("grn"))
+		if (ext.equals("dia") || ext.equals("grn"))
 			format = PlugIn.getSaveFormat(PluginConstants.GREEN_EXTENSION);
 		else
-			format = PlugIn.getSaveFormat(extension);
+			format = PlugIn.getSaveFormat(ext);
 		
 		if (format == null) {
 			MessageDialog.openError(editor.getSite().getShell(),
-					GRERR_FILE_FORMAT, GRERR_FILE_FORMAT + ": " + extension);
+					GRERR_FILE_FORMAT, GRERR_FILE_FORMAT + ": " + ext);
 			return;
 		}
 		
