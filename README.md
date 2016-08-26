@@ -2,8 +2,6 @@
 #Green UML release 4.6.0
 - [Requirements](#requirements)
 - [Installation](#installation)
- - [Through Eclipse (recommended)](#through-eclipse-recommended)
- - [Through file system drop-in](#through-file-system-drop-in)
 - [Users guide and additional information](#users-guide-and-additional-information)
 - [Contribute](#contribute)
  - [Requirements to develop Green UML](#requirements-to-develop-green-uml)
@@ -32,7 +30,7 @@ Green supports exporting files to JPG, PNG and GIF formats, as well as saving th
 Eclipse 4.6 Neon
 
 ## Installation
-### Through Eclipse (recommended)
+
 - Open Eclipse, and navigate to Help > Install New Software...
 - Click on Add... 
 - Fill the fields as following: <br>
@@ -40,11 +38,6 @@ Eclipse 4.6 Neon
      Location: http://odo.lv/ftp/tools/GreenUpdateSite
 - Click OK 
 - Choose what features to install and follow further instructions
-
-### Through file system drop-in
-- After downloading the Green zip file, extract the contents to [Eclipse installation directory]\dropins\
-- If warned that any existing files with the same name will be overwritten, select "Yes to All"
-
 
 ## Users guide and additional information
 - [Using the Green UML Plugin for Eclipse](https://www.clear.rice.edu/comp310/Eclipse/GreenUML/)
