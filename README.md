@@ -45,7 +45,9 @@ Eclipse 4.6 Neon
 
 
 ## Contribute
-If you want to contribute to this project, please create a fork of this and commit all of your changes there. 
+If you want to contribute to this project, please create a fork of this and commit all of your changes there.
+
+Please note that Green UML is effectively a collection of plug-ins (see [the structure overview](https://raw.githubusercontent.com/JanisPelss/GreenUML/master/GreenHelp/green-structure.png)). Development of each  plug-in is performed in a separate Eclipse project. There are also additional projects: an _update site_ project `GreenUpdateSite` (used to create an Eclipse plug-in installation web site), and _feature_ projects: `GreenFeature`, `GreenRelationshipsFeature` and `GreenSVGSaveFeature` (used to package groups of plug-ins together into installable and updatable units which are then uploaded to the update site).
 
 ### Requirements to develop Green UML:
 - [Eclipse Modelling Tools (package Neon R)](http://www.eclipse.org/downloads/packages/release/Neon/R)
