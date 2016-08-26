@@ -305,9 +305,7 @@ public class DiagramEditor extends GraphicalEditorWithFlyoutPalette implements
 		_editors.add(this);
 		_bendpoints = new ArrayList<BendpointInformation>();
 		setEditDomain(new DefaultEditDomain(this));
-		System.out.println("Adding command listener");
 		getCommandStack().addCommandStackEventListener(this);
-		System.out.println("Command listener added");
 		getCommandStack().setUndoLimit(100);
 		_root = new RootModel();
 		_cuMap = new CompilationUnitMap();

@@ -175,7 +175,6 @@ public final class PlugIn extends AbstractUIPlugin {
 	 * @param group - The <code>RelationshipGroup</code> to add.
 	 */
 	private static void addRelationshipGroup(RelationshipGroup group) {
-		System.out.println("addRelationshipGroup(RelationshipGroup group)");
 		// map the relationship's part to the group
 		_relationshipMap.put(group.getPartClass(), group);
 		_relationshipGroups.add(group);

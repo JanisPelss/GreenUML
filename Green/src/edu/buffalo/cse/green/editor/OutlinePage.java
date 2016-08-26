@@ -132,7 +132,6 @@ public class OutlinePage extends ContentOutlinePage {
      */
     public void setSelection(ISelection selection) {
     	if(selection== null){
-    		System.out.println("setSelection() -- selection is null");
     	}
         super.setSelection(selection);
 
@@ -141,14 +140,6 @@ public class OutlinePage extends ContentOutlinePage {
         
         _sel = (IStructuredSelection) selection;
         AbstractPart part = (AbstractPart) _sel.getFirstElement();
-        if(part==null){
-        	System.out.println("setSelection -- part=null");
-        	
-        }
-        System.out.println("Setselection");
-        if(DiagramEditor.getActiveEditor()==null){
-        	System.out.println("Diagram editor_Active is null");
-        }
         DiagramEditor.getActiveEditor().selectionChanged(
         		DiagramEditor.getActiveEditor(), new StructuredSelection(part));
     }
