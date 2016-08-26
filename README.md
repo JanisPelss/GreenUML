@@ -26,7 +26,7 @@ Green supports exporting files to JPG, PNG and GIF formats, as well as saving th
 - Fixed all discovered bugs
 - All other plug-ins necessary for Green UML to work are now installed automatically with the plug-in 
 - Minor UI improvements
-- Added logger and an option to write output to file
+- Added logger and an option to write output to file (accesible in Preferences)
 
 ## Requirements
 Eclipse 4.6 Neon
